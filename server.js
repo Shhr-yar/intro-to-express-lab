@@ -3,18 +3,18 @@ const app = express();
 const path = require('path');
 
 
-
+//reuesting and responding for the main directory(homepage) 
 app.get('/',function(req,res){
     console.log(__dirname)
-    res.sendFile(path.join(__dirname + '/views/homepage.html'))
+    res.sendFile(path.join(__dirname + '/views/homepage.html')) //using "path,join so that it runs smoothly on all systems(mac and windows both)"
  })
-
+//requesting and responding for the "about" file
  app.get('/about',function(req,res){
     res.sendFile(path.join(__dirname + '/views/about.html'))
  })
 
 app.get('/test', function(req, res){
-    res,send('<p>Success!</p>');
+    res.send('<p>Success!</p>');
 });
 
 
